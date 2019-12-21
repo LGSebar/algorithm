@@ -6,9 +6,15 @@ package com.sebar.test.common;
  */
 public class Node<T> {
     /**
-     * 链表存放的数据
+     * 链表存放的数据键
      */
-    private T data;
+    private T key;
+
+    /**
+     * 链表存储的值
+     */
+    private T value;
+
     /**
      * 链表节点的前置节点
      */
@@ -19,23 +25,28 @@ public class Node<T> {
      */
     private Node<T> next;
 
-    public Node(T data, Node<T> next) {
-        this.data = data;
+    public Node(T key, Node<T> next) {
+        this.key = key;
+        this.next = next;
+    }
+    public Node(T key,T value, Node<T> next) {
+        this.key = key;
+        this.value = key;
         this.next = next;
     }
 
-    public Node(T data, Node<T> prev, Node<T> next) {
-        this.data = data;
+    public Node(T key, Node<T> prev, Node<T> next) {
+        this.key = key;
         this.prev = prev;
         this.next = next;
     }
 
-    public T getData() {
-        return data;
+    public T getKey() {
+        return key;
     }
 
-    public void setData(T data) {
-        this.data = data;
+    public void setKey(T key) {
+        this.key = key;
     }
 
     public Node<T> getPrev() {
@@ -52,5 +63,13 @@ public class Node<T> {
 
     public void setNext(Node<T> next) {
         this.next = next;
+    }
+
+    public T getValue() {
+        return value;
+    }
+
+    public void setValue(T value) {
+        this.value = value;
     }
 }

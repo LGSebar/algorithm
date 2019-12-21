@@ -54,7 +54,7 @@ public class LinkedListBuildLRUAlgorithm<T> {
 
     public Node<T> findNode(T data){
         Node<T> currentNode=head;
-        while (currentNode.getNext() != null && !data.equals(currentNode.getData())){
+        while (currentNode.getNext() != null && !data.equals(currentNode.getKey())){
             currentNode=currentNode.getNext();
         }
         // 找到结点后返回
