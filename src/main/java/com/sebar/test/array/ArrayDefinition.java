@@ -1,4 +1,4 @@
-package com.sebar.array;
+package com.sebar.test.array;
 
 /**
  * lg

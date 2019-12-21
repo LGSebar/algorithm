@@ -1,4 +1,4 @@
-package com.sebar.common;
+package com.sebar.test.common;
 
 
 /**
@@ -19,9 +19,9 @@ public class Node<T> {
      */
     private Node<T> next;
 
-    public Node(T data, Node<T> prev) {
+    public Node(T data, Node<T> next) {
         this.data = data;
-        this.prev = prev;
+        this.next = next;
     }
 
     public Node(T data, Node<T> prev, Node<T> next) {

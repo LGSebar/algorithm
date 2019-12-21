@@ -1,6 +1,6 @@
-package com.sebar.linkedlist;
+package com.sebar.test.linkedlist;
 
-import com.sebar.common.Node;
+import com.sebar.test.common.Node;
 
 /**
  * 用单向linkedList实现LRU算法
@@ -24,12 +24,7 @@ public class LinkedListBuildLRUAlgorithm<T> {
 
     public LinkedListBuildLRUAlgorithm() {
         this.length = 0;
-        head = null;
-    }
-
-    public LinkedListBuildLRUAlgorithm(T data, Node<T> node) {
-        this.length = 0;
-        head = new Node<>(data, node);
+        this.head = null;
     }
 
     /**
@@ -37,6 +32,9 @@ public class LinkedListBuildLRUAlgorithm<T> {
      */
     public void insertNodeBeginHead(T data) {
         this.length++;
+        if(head ==null){
+            head=new Node<>(null,null);
+        }
         Node<T> headNextNode = head.getNext();
         head.setNext(new Node<>(data, headNextNode));
     }
@@ -56,25 +54,10 @@ public class LinkedListBuildLRUAlgorithm<T> {
 
     public Node<T> findNode(T data){
         Node<T> currentNode=head;
-        while (currentNode.getNext() != null && !currentNode.getData().equals(data)){
+        while (currentNode.getNext() != null && !data.equals(currentNode.getData())){
             currentNode=currentNode.getNext();
         }
         // 找到结点后返回
         return currentNode;
-    }
-
-    /**
-     * 测试
-     * @param args
-     */
-    public static void main(String[] args) {
-        LinkedListBuildLRUAlgorithm algorithm=new LinkedListBuildLRUAlgorithm();
-
-        algorithm.insertNodeBeginHead(1);
-        algorithm.insertNodeBeginHead(2);
-        algorithm.insertNodeBeginHead(3);
-        algorithm.insertNodeBeginHead(4);
-
-        Node node = algorithm.findNode(3);
     }
 }

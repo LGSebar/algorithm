@@ -1,4 +1,4 @@
-package com.sebar.linkedlist;
+package com.sebar.test.linkedlist;
 
 /**
  * lg
