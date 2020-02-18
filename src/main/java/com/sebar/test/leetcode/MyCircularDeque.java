@@ -22,6 +22,7 @@ public class MyCircularDeque<E> {
      * Number of items in the deque
      */
     private transient int count;
+
     /**
      * Initialize your data structure here. Set the size of the deque to be k.
      */
@@ -147,7 +148,8 @@ public class MyCircularDeque<E> {
             throw new IllegalArgumentException();
         }
         Node<E> firstNode = this.firstNode;
-        return (int) firstNode.item;
+//        return (int) firstNode.item;
+        return 0;
     }
 
     /**
@@ -158,7 +160,7 @@ public class MyCircularDeque<E> {
             throw new IllegalArgumentException();
         }
         Node<E> tailNode = this.tailNode;
-        return (int) tailNode.item;
+        return 0;
     }
 
     /**
