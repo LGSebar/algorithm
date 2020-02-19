@@ -33,9 +33,35 @@ public class Leetcode_70_566 {
         return res[n];
     }
 
-    public int solutionTwo(int n){
+    public int solutionTwo(int n) {
         double sqrt = Math.sqrt(5);
         double val = Math.pow((1 + sqrt) / 2, n + 1) - Math.pow((1 - sqrt) / 2, n + 1);
-        return (int)(val/sqrt);
+        return (int) (val / sqrt);
+    }
+
+    public int recursiveSolution(int n) {
+        int[] solution = new int[n + 1];
+        return solutionWay(0, n, solution);
+    }
+
+    private int solutionWay(int i, int n, int[] solution) {
+        if (i > n) {
+            return 0;
+        }
+        if (i == n) {
+            return 1;
+        }
+        if (solution[i] > 0) {
+            return solution[i];
+        }
+
+        solution[i] = solutionWay(i + 1, n, solution) + solutionWay(i + 2, n, solution);
+        return solution[i];
+    }
+
+    public static void main(String[] args) {
+        Leetcode_70_566 code = new Leetcode_70_566();
+        int i = code.recursiveSolution(4);
+        System.out.println(i);
     }
 }
