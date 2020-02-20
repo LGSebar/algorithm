@@ -1,7 +1,7 @@
 package com.sebar.test.leetcode;
 
 /**
- * @author liguang@youxin.com
+ * @author liguang
  * @Date 2020/2/12
  * @Description 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，
  * 同时保持非零元素的相对顺序。

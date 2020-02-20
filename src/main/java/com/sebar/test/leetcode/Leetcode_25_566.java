@@ -3,7 +3,7 @@ package com.sebar.test.leetcode;
 import java.util.Stack;
 
 /**
- * @author liguang@youxin.com
+ * @author liguang
  * @Date 2020/2/16
  * @Description
  */

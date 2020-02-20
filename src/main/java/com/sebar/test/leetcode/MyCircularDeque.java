@@ -1,7 +1,7 @@
 package com.sebar.test.leetcode;
 
 /**
- * @author liguang@youxin.com
+ * @author liguang
  * @Date 2020/2/14
  * @Description
  */

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author liguang@youxin.com
+ * @author liguang
  * @Date 2020/2/16
  * @Description https://leetcode-cn.com/problems/linked-list-cycle/
  */

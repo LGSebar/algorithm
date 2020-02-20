@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author liguang@youxin.com
+ * @author liguang
  * @Date 2020/2/12
  * @Description 给定一个包含 n 个整数的数组 nums，判断 nums 中
  * 是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？
