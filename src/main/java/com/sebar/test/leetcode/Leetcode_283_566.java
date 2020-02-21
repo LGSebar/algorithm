@@ -101,7 +101,7 @@ public class Leetcode_283_566 {
         int j = 0;
 
         for (int i = 0; i < nums.length; i++) {
-            //当前元素不等于0的时候与左边的进行
+            //当前元素不等于0的时候与左边的进行位置交换
             if (nums[i] != 0) {
                 // 交换位置
                 int temp = nums[i];

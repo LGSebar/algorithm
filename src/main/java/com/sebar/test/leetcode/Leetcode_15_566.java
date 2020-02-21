@@ -35,12 +35,9 @@ public class Leetcode_15_566 {
         if (nums.length < 3) {
             return resList;
         }
-
         // 先将当前数据进行数据排序，这样可以避免重复
         Arrays.sort(nums);
-
-        // 双指针法进行数据求解，第一个指针ha等于当前循环1+1,
-        // 第二个指针la等于最后一个元素，
+        // 双指针法进行数据求解，第一个指针ha等于当前循环1+1,第二个指针la等于最后一个元素，
         // 如果三个数字相加大于0，则 la后退一位，如果三个数字相加小于0，则ha前进一位
         for (int i = 0; i < nums.length - 2; i++) {
             if (i > 0 && nums[i] == nums[i - 1]) {
@@ -52,15 +49,12 @@ public class Leetcode_15_566 {
             int la = nums.length - 1;
 
             while (ha < la) {
-                // 比目标值大
                 if (nums[ha] + nums[la] > target) {
                     la--;
                 }
-                // 比目标值小
                 else if (nums[ha] + nums[la] < target) {
                     ha++;
                 }
-                // 相等
                 else {
                     // 记录到数组中去
                     resList.add(Arrays.asList(nums[i], nums[ha], nums[la]));
@@ -75,8 +69,6 @@ public class Leetcode_15_566 {
                     }
                 }
             }
-
-
         }
         return resList;
     }
