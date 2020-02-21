@@ -10,8 +10,6 @@ import java.util.Stack;
 
 public class Leetcode_155_566 {
 
-
-
     Stack<Integer> stack = new Stack<>();
     Stack<Integer> minNumStack = new Stack<>();
 
