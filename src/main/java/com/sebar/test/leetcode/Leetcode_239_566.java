@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 
 /**
- * @author liguang@youxin.com
+ * @author liguang
  * @Date 2020/2/21
  * @Description
  */
