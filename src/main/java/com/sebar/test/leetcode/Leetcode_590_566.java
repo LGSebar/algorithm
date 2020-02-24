@@ -83,6 +83,13 @@ public class Leetcode_590_566 {
         return;
     }
 
+    /**
+     * 栈的方式解决后序遍历
+     * 左--》右--》根
+     *
+     * @param root
+     * @return
+     */
     public List<Integer> stackPostOrder(Node root) {
         LinkedList<Node> stackNode = new LinkedList<>();
         LinkedList<Integer> resList = new LinkedList<>();
@@ -95,10 +102,11 @@ public class Leetcode_590_566 {
         while (!stackNode.isEmpty()) {
             // 先出栈最后一个元素节点
             Node pollLastNode = stackNode.pollLast();
-            //
+            // 将其加入到链表前面，保证了从左节点到右节点再到根节点的顺序
             resList.addFirst(pollLastNode.val);
 
             for (Node childNode : pollLastNode.children) {
+                // 依次将左右节点进行入栈
                 stackNode.add(childNode);
             }
         }

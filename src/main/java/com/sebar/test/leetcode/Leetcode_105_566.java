@@ -16,7 +16,7 @@ public class Leetcode_105_566 {
 
     public static void main(String[] args) {
         Leetcode_105_566 code = new Leetcode_105_566();
-//        TreeNode treeNode = code.buildTree(new int[]{3,9,20,15,7}, new int[]{9,3,15,20,7});
+//        TreeNode treeNode = code.buildTree(new int[]{3,9,20,15,7}, new int[]{9,3,15,20,7})
         TreeNode treeNode = code.buildTree(new int[]{1,2,4,7,3,5,6,8}, new int[]{4,7,2,1,5,3,8,6});
         System.out.println(treeNode);
     }

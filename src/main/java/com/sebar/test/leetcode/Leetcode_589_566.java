@@ -92,7 +92,7 @@ public class Leetcode_589_566 {
     }
 
     /**
-     * 栈的方式解决前置
+     * 栈的方式解决前序遍历
      *
      * @param root
      * @return
@@ -108,6 +108,7 @@ public class Leetcode_589_566 {
         // 先把跟加进去
         nodeStackList.add(root);
         while (!nodeStackList.isEmpty()) {
+            // 先将链表中最后一个节点出栈
             Node currentNode = nodeStackList.pollLast();
             resList.add(currentNode.val);
 
