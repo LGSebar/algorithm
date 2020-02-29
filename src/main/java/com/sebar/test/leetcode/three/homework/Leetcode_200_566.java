@@ -1,5 +1,8 @@
 package com.sebar.test.leetcode.three.homework;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * @author liguang
  * @Date 2020/2/28
@@ -92,4 +95,60 @@ public class Leetcode_200_566 {
         dfs(grid, nowRow, nowCol + 1);
         // reverse current status
     }
+
+    public int numIsLandsBFS(char[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
+
+        // 行和列
+        int row = grid.length;
+        int col = grid[0].length;
+
+        int numIsLands = 0;
+
+        for (int r = 0; r < row; r++) {
+            for (int c = 0; c < col; c++) {
+                if (grid[r][c] == '1') {
+                    ++numIsLands;
+                    // 将这个位置变为0 标记成已经访问过了
+                    grid[r][c] = '0';
+                    //
+                    Queue<Integer> queue = new LinkedList<>();
+                    // 将当前位置的下方节点加入到栈中，也就是下一列的第一个元素
+                    queue.add(r * col + c);
+
+                    while (!queue.isEmpty()) {
+                        Integer index = queue.remove();
+                        Integer nowRow = index / col;
+                        Integer nowCol = index % col;
+
+                        if (nowRow - 1 >= 0 && grid[nowRow - 1][nowCol] == '1') {
+                            queue.add((nowRow - 1) * col + nowCol);
+                            grid[nowRow - 1][nowCol] = '0';
+                        }
+
+                        if (nowRow + 1 < row && grid[nowRow + 1][nowCol] == '1') {
+                            queue.add((nowRow + 1) * col + nowCol);
+                            grid[nowRow + 1][nowCol] = '0';
+                        }
+
+                        if (nowCol - 1 >= 0 && grid[nowRow][nowCol - 1] == '1') {
+                            queue.add(nowRow * col + nowCol - 1);
+                            grid[nowRow][nowCol - 1] = '0';
+                        }
+
+                        if (nowCol + 1 < row && grid[nowRow][nowCol + 1] == '1') {
+                            queue.add(nowRow * col + nowCol + 1);
+                            grid[nowRow][nowCol + 1] = '0';
+                        }
+                    }
+                }
+
+            }
+        }
+        return 0;
+    }
 }
+
+
